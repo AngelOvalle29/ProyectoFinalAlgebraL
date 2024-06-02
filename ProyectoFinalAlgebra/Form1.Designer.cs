@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.TextBoxCarnet = new System.Windows.Forms.TextBox();
@@ -103,7 +104,7 @@
             this.SwitchLimpiar.Font = new System.Drawing.Font("Microsoft YaHei", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.SwitchLimpiar.Location = new System.Drawing.Point(639, 284);
             this.SwitchLimpiar.Name = "SwitchLimpiar";
-            this.SwitchLimpiar.Size = new System.Drawing.Size(184, 104);
+            this.SwitchLimpiar.Size = new System.Drawing.Size(186, 125);
             this.SwitchLimpiar.TabIndex = 5;
             this.SwitchLimpiar.Text = "Limpiar";
             this.SwitchLimpiar.UseVisualStyleBackColor = false;
@@ -115,7 +116,7 @@
             this.SwitchGuardar.Font = new System.Drawing.Font("Microsoft YaHei", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.SwitchGuardar.Location = new System.Drawing.Point(847, 284);
             this.SwitchGuardar.Name = "SwitchGuardar";
-            this.SwitchGuardar.Size = new System.Drawing.Size(174, 104);
+            this.SwitchGuardar.Size = new System.Drawing.Size(174, 125);
             this.SwitchGuardar.TabIndex = 6;
             this.SwitchGuardar.Text = "Guardar Carnet";
             this.SwitchGuardar.UseVisualStyleBackColor = false;
@@ -123,9 +124,11 @@
             // 
             // ImagenPic
             // 
-            this.ImagenPic.Location = new System.Drawing.Point(674, 491);
+            this.ImagenPic.Image = ((System.Drawing.Image)(resources.GetObject("ImagenPic.Image")));
+            this.ImagenPic.Location = new System.Drawing.Point(545, 460);
             this.ImagenPic.Name = "ImagenPic";
-            this.ImagenPic.Size = new System.Drawing.Size(100, 50);
+            this.ImagenPic.Size = new System.Drawing.Size(515, 133);
+            this.ImagenPic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.ImagenPic.TabIndex = 7;
             this.ImagenPic.TabStop = false;
             this.ImagenPic.Click += new System.EventHandler(this.ImagenPic_Click);
@@ -154,6 +157,7 @@
             this.Controls.Add(this.TextBoxCarnet);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form1";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);

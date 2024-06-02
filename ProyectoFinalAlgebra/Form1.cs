@@ -20,6 +20,7 @@ namespace ProyectoFinalAlgebra
         public Form1()
         {
             InitializeComponent();
+            string codigo;
         }
         private void SwitchLimpiar_Click(object sender, EventArgs e)
         {
@@ -76,7 +77,7 @@ namespace ProyectoFinalAlgebra
             int Verificacion = (11 - (suma % 11)) % 11;
 
             // Instrucción con el fin de ocultar el último dígito de el carnet
-            char letradeVerificacion = (char)(Verificacion + 65); // Conversión del Número obtenido a una letra mayúscula
+            char letradeVerificacion = (char)(42); // Conversión del Número obtenido a una letra mayúscula
             return NewLicense + letradeVerificacion;
         }
         private void GuardarDatos(string carneNuevo )
@@ -84,7 +85,7 @@ namespace ProyectoFinalAlgebra
             // Función e instrucciones las cuales estipulan la dirección a donde serán guardados los datos
             // Y genera el archivo .txt el cual contendrá todos los carnets ingresados
             string direccionArchivo = "Datos.txt";
-            using (StreamWriter sw = File.AppendText(direccionArchivo)) // Hace que no se sobreescriba el contenido
+            using (StreamWriter sw = File.AppendText(direccionArchivo)) // Hace que no se sobre escriba el contenido
             {
                 sw.WriteLine(carneNuevo);
             }
@@ -106,13 +107,23 @@ namespace ProyectoFinalAlgebra
 
         private void SwitchGenerar_Click(object sender, EventArgs e)
         {
+            string codigo;
             //Botón el cual genera el nuevo carnet y el QR
             TextBoxResultado.Visible = true;
             label2.Visible = true;
             string carneActual = TextBoxCarnet.Text;
             string nuevoCarne = NuevoCarnet(carneActual);
             TextBoxResultado.Text = nuevoCarne;
-            PropiedadesCodigoQR(nuevoCarne);
+            if (nuevoCarne.Contains("2023")||nuevoCarne.Contains("2022") || nuevoCarne.Contains("2021") || nuevoCarne.Contains("2020") || nuevoCarne.Contains("2019") || nuevoCarne.Contains("2018") || nuevoCarne.Contains("2017") || nuevoCarne.Contains("2016") || nuevoCarne.Contains("2024"))
+            {
+                PropiedadesCodigoQR("El Código SI es válido"+"\n"+"Es : "+nuevoCarne);
+                MessageBox.Show("El Carné generado si es válido");
+            }
+            else
+            {
+                PropiedadesCodigoQR("El Código NO es válido"+"\n"+"Es : "+nuevoCarne);
+                MessageBox.Show("El Carné generado no es válido");
+            }
         }
 
         private void label1_Click(object sender, EventArgs e)
